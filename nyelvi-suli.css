@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+    background-color: yellowgreen;
+}
+
+.header-wrapper {
+    background: #f0f4fa;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2a3a5e;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #4a5a7e;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #2a3a5e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.cta-btn:hover {
+    background: #1a2540;
+}
+
+.image-wrapper {
+    background-color: #fff;
+}
+
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+.contact-list li {
+    margin-bottom: 6px;
+}
+
+.gift-description,
+.gift,
+.subscribe,
+.contact {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+.gift-description h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #2a3a5e;
+}
+
+.gift-description p {
+    font-size: 1.1rem;
+    color: #4a5a7e;
+}
+
+.gift {
+    background: #fff;
+    border-radius: 10px;
+    padding: 32px 20px;
+    margin: 40px auto;
+    box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
+}
+
+.gift h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    color: #2a3a5e;
+    text-align: center;
+}
+
+.gift ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+.gift li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #4a5a7e;
+    text-align: center;
+}
+
+
+.subscribe {
+    background: #e8f0fe;
+    border-radius: 10px;
+    padding: 32px 20px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
+}
+
+.subscribe span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #2a3a5e;
+    font-weight: bold;
+}
+
+.subscribe form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.subscribe input[type="email"] {
+    padding: 10px 14px;
+    border: 1.5px solid #b0c4de;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 320px;
+    transition: border 0.2s;
+}
+
+.subscribe input[type="email"]:focus {
+    border: 2px solid #2a3a5e;
+    outline: none;
+}
+
+.subscribe input[type="text"] {
+    color: #899bad;
+    padding: 10px 14px;
+    border: 1.5px solid #b0c4de;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 320px;
+    transition: border 0.2s;
+}
+
+.subscribe input[type="text"]:focus {
+    border: 2px solid #2a3a5e;
+    outline: none;
+}
+
+.subscribe button {
+    padding: 12px 28px;
+    background: #2a3a5e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.subscribe button:hover {
+    background: #1a2540;
+    transform: scale(1.04);
+}
+
+.contact {
+    background: #f0f4fa;
+    border-radius: 10px;
+    padding: 32px 20px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
+}
+
+/*.social-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    align-items: center;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a img {
+    display: block;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+*/
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.contact-list li {
+    margin-bottom: 6px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links li {
+    display: block;
+
+}
+
+.social-links a img {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.15);
+    filter: brightness(0.7);
+}
+
+.footer-wrapper footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px; /* távolság az elemek között */
+    padding: 16px 0;
+    background: #f0f4fa;
+}
+
+.footer-wrapper footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: #f0f4fa;
+    flex-wrap: wrap;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 0;
+}
+
+
+
+
+/* Reszponzív beállítások 
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 10px 25px;
+    }
+
+    .features ul {
+        padding-left: 20px;
+    }
+
+    .image-wrapper {
+        padding: 10px;
+    }
+
+    .features h2 {
+        font-size: 1.5rem;
+    }
+
+    .features li {
+        font-size: 1rem;
+    }
+}
+*/
+
+/* CTA gomb hover és focus állapotok 
+.cta-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #2a3a5e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover, .cta-btn:focus {
+    background: #1a2540;
+    transform: scale(1.05); /* Finom növelés a gomb kinézetének kiemelésére 
+}*/
+
+/* Form elemek hover 
+input[type="text"], input[type="email"], button {
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:hover, input[type="email"]:hover, button:hover {
+    border: 2px solid #2a3a5e;
+}
+*/
+
+/* Szakaszok közötti távolság 
+header, .features, .signup-section {
+    margin-bottom: 40px;
+}
+
+/* Formok közötti távolság 
+input, button {
+    margin-bottom: 15px;
+}
+*/
+
+/*.features ul {
+    list-style-type: none;  Lista piktogramok eltüntetése 
+    padding: 0;
+}
+
+.features li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.5; Könnyebben olvasható lista 
+}
+*/
+
+/* Finom animációk a szakaszokhoz 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    animation: fadeIn 1s ease-out;
+}
+
+
+h1, h2 {
+    font-weight: bold;
+    color: #2a3a5e;
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5a7e;
+}
+*/
