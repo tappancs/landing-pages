@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Host = 'smtp.mail.bokakrisztina.com'; // Pl. smtp.gmail.com
         $mail->SMTPAuth = true;
         $mail->Username = 'bokakrisztina1@gmail.com'; // Saját e-mail címed
-        $mail->Password = 'jelszavad1';          // Saját jelszavad vagy alkalmazásjelszó
+        $mail->Password = '0%pF&s7mAA';          // Saját jelszavad vagy alkalmazásjelszó
         $mail->SMTPSecure ='ssl';              // Vagy 'ssl'
         $mail->Port = 465;                      // 465 ha ssl-t használsz
 
@@ -49,5 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (Exception $e) {
         echo "Hiba történt: {$mail->ErrorInfo}";
     }
+
+} else {
+    header("Location: 404.html");
+    exit;
 }
+    
 ?>
