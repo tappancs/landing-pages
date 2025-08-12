@@ -1,14 +1,4 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 10px;
-    background-color: yellowgreen;
-}
 
 .header-wrapper {
     background: #f0f4fa;
@@ -28,6 +18,17 @@ header p {
     color: #4a5a7e;
 }
 
+.gift-description,
+.gift,
+.subscribe,
+.contact {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    text-align: center;
+} 
 .cta-btn {
     display: inline-block;
     padding: 12px 32px;
@@ -54,6 +55,8 @@ header p {
     border-radius: 8px;
 }
 
+
+
 .contact-list {
     list-style: none;
     padding: 0;
@@ -63,16 +66,8 @@ header p {
     margin-bottom: 6px;
 }
 
-.gift-description,
-.gift,
-.subscribe,
-.contact {
-    max-width: none;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-}
+
+
 
 .gift-description h2 {
     font-size: 1.6rem;
@@ -195,29 +190,7 @@ header p {
     box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
 }
 
-/*.social-links {
-    display: flex;
-    gap: 16px;
-    list-style: none;
-    padding: 0;
-    margin: 16px 0;
-    align-items: center;
-}
 
-.social-links li {
-    display: inline-block;
-}
-
-.social-links a img {
-    display: block;
-    transition: transform 0.2s;
-}
-
-.social-links a:hover img {
-    transform: scale(1.15);
-    filter: brightness(1.2);
-}
-*/
 
 .contact-list {
     list-style: none;

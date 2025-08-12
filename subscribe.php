@@ -7,6 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
+require __DIR__ . '/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // 2. Bekért adatok
@@ -26,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.mail.bokakrisztina.com'; // Pl. smtp.gmail.com
         $mail->SMTPAuth = true;
-        $mail->Username = 'bokakrisztina1@gmail.com'; // Saját e-mail címed
-        $mail->Password = '0%pF&s7mAA';          // Saját jelszavad vagy alkalmazásjelszó
-        $mail->SMTPSecure ='ssl';              // Vagy 'ssl'
-        $mail->Port = 465;                      // 465 ha ssl-t használsz
+        $mail->Username = $smtpUser; // Saját e-mail címed
+        $mail->Password = $smtpPass; // Saját jelszavad vagy alkalmazásjelszó
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Vagy 'ssl'
+        $mail->Port = 465; // 465 ha ssl-t használsz
 
         // Feladó és címzett
         $mail->setFrom('bokakrisztina1@gmail.com', 'Angol Online Nyelviskola');

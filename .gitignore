@@ -1,0 +1,8 @@
+config.php
+
+<?php
+// config.php
+$smtpUser = "info@bokakrisztina.com";
+$smtpPass = "0%pF&s7mAA";
+?>
+<?php
