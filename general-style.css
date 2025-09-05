@@ -11,6 +11,15 @@ body {
 
 }
 
+section { 
+    width: 90%;
+    margin: 0 auto 40px auto; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
 h1,
 h2,
 h3 {
@@ -29,4 +38,38 @@ p {
     font-weight: 400;
     font-style: normal;
     color: #2a2a2a;
+    padding: 15px;
 }
+
+/* Reszponzív beállítások 
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 10px 25px;
+    }
+
+   /* .features ul {
+        padding-left: 20px;
+    }
+        */
+
+   /* .image-wrapper {
+        padding: 10px;
+    }
+
+    /*.features h2 {
+        font-size: 1.5rem;
+    }
+
+    .features li {
+        font-size: 1rem;
+    }
+}
+*/

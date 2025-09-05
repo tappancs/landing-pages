@@ -7,14 +7,26 @@ use PHPMailer\PHPMailer\Exception;
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
-require __DIR__ . '/config.php';
+
+// 2. Betöltjük az .env fájlt
+require __DIR__ . '/vendor/autoload.php';
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // 2. Bekért adatok
     $nev = htmlspecialchars($_POST['nev'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
 
-    // 3. Mentés CSV fájlba
+   // ✅ Email formátum ellenőrzés – később aktiválható
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Érvénytelen e-mail cím!";
+        exit;
+    }
+    
+
+   // 3. Mentés CSV fájlba
     $file = fopen('submissions.csv', 'a');
     fputcsv($file, [$nev, $email, date('Y-m-d H:i:s')]);
     fclose($file);
@@ -23,17 +35,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mail = new PHPMailer(true);
 
     try {
+
+        // ✅ Karakterkódolás beállítása UTF-8-ra
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+
         // SMTP beállítások – EZEKET CSERÉLD KI SAJÁT ADATOKRA
         $mail->isSMTP();
-        $mail->Host = 'smtp.mail.bokakrisztina.com'; // Pl. smtp.gmail.com
+        $mail->Host =  $_ENV['SMTP_HOST']; // Pl. smtp.gmail.com
         $mail->SMTPAuth = true;
-        $mail->Username = $smtpUser; // Saját e-mail címed
-        $mail->Password = $smtpPass; // Saját jelszavad vagy alkalmazásjelszó
+        $mail->Username = $_ENV['SMTP_USER']; // Saját e-mail címed
+        $mail->Password = $_ENV['SMTP_PASS']; // Saját jelszavad vagy alkalmazásjelszó
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Vagy 'ssl'
         $mail->Port = 465; // 465 ha ssl-t használsz
 
         // Feladó és címzett
-        $mail->setFrom('bokakrisztina1@gmail.com', 'Angol Online Nyelviskola');
+        $mail->setFrom($_ENV['SMTP_USER'], 'Angol Online Nyelviskola');
         $mail->addAddress('bokakrisztina1@gmail.com'); // Ide kapod az értesítést
 
         // Üzenet tartalma
@@ -44,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->send();
 
         // Sikeres küldés után átirányítás
-        header('Location: koszono.html');
+        header('Location: /Angol-online-nyelviskola/koszono-oldal/index.html');
         exit;
 
     } catch (Exception $e) {
@@ -52,8 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
 } else {
-    header("Location: 404.html");
+    header("Location: /Angol-online-nyelviskola/404error/index.html");
     exit;
 }
-    
-?>
