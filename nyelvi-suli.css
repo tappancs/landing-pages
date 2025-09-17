@@ -1,192 +1,286 @@
 header,
-section, 
+section,
 footer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 100%;
 }
 
 .header-wrapper,
 .gift-description,
 .gift,
 .subscribe,
-.contact,
-.footer-wrapper {
-    /* width: calc(100vw-20px); */
-    /*max-width: none;*/
+.contact {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
     text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
 }
 
+
 .header-wrapper {
-    padding: 20px auto;
+
     text-align: center;
-
+    background: linear-gradient(135deg, #f0f4fa, #ffffff);
+    padding: 20px 15px;/* mobilbarát belső tér */
+    border-radius: 10px;/* illeszkedik a general style-hoz */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-
-}
-
 
 .cta-btn {
-    display: inline-block;
-    padding: 12px 32px;
-    background: #2a3a5e;
+    display: block;/* teljes sor */
+    width: 100%;/* kijelző szélesség */
+    max-width: 320px;/* de ne legyen túl nagy */
+    margin: 0 auto;/* középre */
+    padding: 12px 0;/* kényelmes tappolás */
+    background: #3e5488;
+    font-size: 1.25rem;/*kb 20px*/
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: bold;
     transition: background 0.2s;
 }
 
 .cta-btn:hover {
     background: #1a2540;
+    transform: scale(1.03);
 }
 
-.image-wrapper {
-    background-color: #fff;
+/* ---------- Tablet nézet - CTA gomb ---------- */
+@media (min-width: 600px) and (max-width:768px) {
+    .cta-btn {
+        font-size: 1.375rem;/* kb. 22px - mobilon 20px volt */
+        padding: 14px 0;/* kicsit több tap-target */
+        max-width: 360px;/* ne legyen túl nagy */
+    }
 }
 
 
 .image-wrapper img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;/* eltünteti az esetleges inline spacing-et */
+}
+
+/*----------laptop nézet - header kép és szöveg egymás mellett ----------*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-wrapper {
+        padding: 50px 40px; /* nagyobb belső tér */
+        margin: 0 auto; 
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-wrapper .image-wrapper {
+        display: flex;              /* flex konténer */
+        justify-content: center;    /* középre vízszintesen */
+        align-items: center;        /* középre függőlegesen */
+        width: 100%;
+        margin:0;
+        padding: 40px 0;
+    }
+
+    .header-wrapper .image-wrapper img {
+        max-width: 100%;  /* a kép ne lógjon ki */
+        width: 100%;
+        height: auto;
+        display: block;  /* blokkszintű elem, hogy a margin auto működjön */
+        margin: 0;   /*középre helyezés, ha kell */
+    }
+
+     .header-wrapper header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        width: 100%;
+    }
+}
+
+/*----------laptop nézet - header kép és szöveg egymás mellett ----------*/
+
+@media (min-width: 1025px) and (max-width:1919px){
+    .header-wrapper {
+        padding: 40px 30px; /* több belső tér */
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .header-wrapper .image-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    .header-wrapper .image-wrapper img {
+        max-width: 1200px; /* a kép ne legyen túl nagy */
+        height: auto;
+        border-radius: 10px;
+    }
+
+     .header-wrapper p {
+        max-width: 70%;
+        margin: 0 auto;    /* középre igazítja */
+        padding: 0 20px;   /* oldalt kis belső tér */
+    }
+    .cta-btn {
+        font-size: 1.75rem; /* kb. 28px, arányos a nagyobb címekhez */
+        padding: 16px 0;
+        max-width: 400px; /* ne lógjon túl */
+        margin: 2.5rem auto 0 auto; /* kicsit több tér a gomb felett */
+    }
 }
 
 
 
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px 0;
-}
 
-.contact-list li {
-    margin-bottom: 6px;
-}
+/*------------Gift-description szekció-----------*/
 
-
-
-
-.gift-description h2 {
-    font-size: 1.6rem;
-    margin-bottom: 16px;
-
+.gift-description {
+    text-align: center;
 }
 
 .gift-description p {
-    font-size: 1.1rem;
-
+    margin-bottom: 12px;
+    /* kis térköz a szövegek között */
 }
 
-.gift {
 
-    border-radius: 10px;
-    padding: 32px 20px;
-    margin: 40px auto;
-
-}
-
+/* ---------- Gift szekció ---------- */
 .gift h2 {
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-    text-align: center;
+    margin-bottom: 16px;
 }
 
 .gift ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
 }
-
 
 .gift li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    /* kb. 20px */
+    font-weight: 400;
+    line-height: 1.6;
+    color: #2a2a2a;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 600px) and (max-width:768px) {
+    .gift li {
+        font-size: 1.5rem;
+        /* kb. 24px */
+        font-weight: 400;
+    }
+}
+
+/*---------- Laptop nézet - gift-description és gift egymás mellett ----------*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .divider {
+    display: flex;
+    justify-content: space-between; /* legyen hely köztük */
+    align-items: stretch; /* <-- ez a kulcs */
+    gap: 20px;                      /* hézag köztük */
+  }
+
+  .divider section {
+    flex: 1;         /* vegyék fel egyenlően a helyet */
+    max-width: 50%;  /* ne legyen 100%, így egymás mellé férnek */
+    text-align: left;
+  }
+
+   /* Törzsszöveg megtartása tableten */
+  .gift p,
+  .gift li,
+  .gift-description p {
+      font-size: 1.75rem; /* tabletre kb. 28px */
+  }
+}
+
+@media (min-width: 1025px) and (max-width:1919px) {
+    .divider {
+        display: flex;
+        flex-direction: row;      /* egymás mellett */
+        justify-content: space-between;
+        align-items: stretch;     /* egyforma magasság */
+        gap: 30px;                /* nagyobb hézag a szakaszok között */
+        padding: 40px 30px;       /* több belső tér */
+    }
+
+    .divider section {
+    flex: 1;         /* vegyék fel egyenlően a helyet */
+    max-width: 50%;  /* ne legyen 100%, így egymás mellé férnek */
+    text-align: left;
+  }
+
+    .gift-description,
+    .gift {
+        flex: 1;                  /* egyforma szélesség */
+        max-width: 48%;            /* ne lógjanak túl */
+        padding: 30px;             /* nagyobb belső tér */
+        font-size: 1.875rem;       /* kb. 30px */
+    }
+
+
+    .gift p,
+    .gift li {
+        font-size: 1.875rem; /* kb. 30px rem-ben */
+        line-height: 1.6;    /* olvashatóság javítása */
+    }
 }
 
 
-.subscribe {
 
-    border-radius: 10px;
-    padding: 32px 20px;
-    margin: 40px auto;
-    text-align: center;
 
-}
-
-.subscribe span {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 18px;
-    font-weight: bold;
-}
+/* ---------- Subscribe szekció ---------- */
 
 .subscribe form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-color: #c6d5e9;
+    border-radius: 10px;
 }
 
+.subscribe input[type="text"],
 .subscribe input[type="email"] {
+    font-size: 1.25rem;
+    /* nagyobb betűméret */
     padding: 10px 14px;
     border: 1.5px solid #b0c4de;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 320px;
+    border-radius: 10px;
     transition: border 0.2s;
-}
-
-.subscribe input[type="email"]:focus {
-    border: 2px solid #2a3a5e;
-    outline: none;
-}
-
-.subscribe input[type="text"] {
-    color: #899bad;
-    padding: 10px 14px;
-    border: 1.5px solid #b0c4de;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 320px;
-    transition: border 0.2s;
-}
-
-.subscribe input[type="text"]:focus {
-    border: 2px solid #2a3a5e;
-    outline: none;
 }
 
 .subscribe button {
-    padding: 12px 28px;
+    font-size: 1.15rem;
+    /* 18-19px */
+    padding: 12px 10px;
     background: #2a3a5e;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: bold;
-    font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
+    box-shadow: none;
 }
 
 .subscribe button:hover {
@@ -194,11 +288,44 @@ header p {
     transform: scale(1.04);
 }
 
+/* Tablet - nagyobb képernyők */
+@media (min-width: 600px) and (max-width:768px) {
+    .subscribe form {
+        max-width: 100%;
+        /* a tartalom teljes szélessége */
+        margin: 0 auto;
+        /* középre igazítja */
+        padding: 10px;
+        /* oldalt is legyen padding */
+    }
+
+    /* Input mezők nagyobb betűmérete és padding */
+    .subscribe input[type="text"],
+    .subscribe input[type="email"] {
+        font-size: 1.5rem;
+        /* kb. 24px */
+        padding: 12px 16px;
+        width: 100%;
+        /* teljesen kitöltse a max-width-ot */
+    }
+
+    /* Gomb nagyobb méret és padding */
+    .subscribe button {
+        font-size: 1.25rem;
+        /* kb. 20px */
+        padding: 14px 20px;
+        width: 100%;
+        /* kitöltse a max-width-ot */
+    }
+}
+
+
+/* ---------- Contact szekció ---------- */
+
+
 .contact {
 
     border-radius: 10px;
-    padding: 32px 20px;
-    margin: 40px auto;
     text-align: center;
     box-shadow: 0 2px 8px rgba(42, 58, 94, 0.06);
 }
@@ -208,15 +335,57 @@ header p {
 .contact-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
+    /* alsó térköz a következő elemhez */
 }
 
 .contact-list li {
-    margin-bottom: 6px;
+    font-size: 1.3rem;
+    /* kb. 21px, jól olvasható mobilon */
+    line-height: 1.5;
+    margin-bottom: 8px;
+    /* kis távolság a sorok között */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* középre igazítja */
+    gap: 8px;
+    /* térköz ikon és szöveg között */
 }
+
+.contact-list li i {
+    margin-right: 8px;
+    /* ikon és szöveg közötti térköz */
+    color: #3e5488;
+    /* ikon színe */
+    font-size: 1.2rem;
+    /* az ikon arányos legyen a szöveggel */
+    vertical-align: middle;
+    /* szöveggel egyvonalban maradjon */
+}
+
+
+.contact-list li a {
+    font-size: 1.3rem;
+    /* linkek ugyanakkoraak, mint a szöveg */
+    color: #3e5488;
+    /* harmonizáljon a szöveggel */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+/* Hover állapot - sötétebb árnyalat */
+.contact-list li a:hover,
+.social-links a:hover {
+    color: #1a2540;
+}
+
+
+
 
 .social-links {
     display: flex;
+    flex-direction: column;
     gap: 16px;
     list-style: none;
     padding: 0;
@@ -227,11 +396,13 @@ header p {
 
 .social-links li {
     display: block;
-
 }
 
 .social-links a img {
     display: inline-block;
+    width: 40px;
+    /* mobilbarát méret */
+    height: 40px;
     transition: transform 0.2s;
 }
 
@@ -240,139 +411,143 @@ header p {
     filter: brightness(0.7);
 }
 
-/*.footer-wrapper footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    /* távolság az elemek között */
-   /* padding: 16px 0;
+@media (min-width: 600px) and (max-width: 768px) {
+    .contact {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 25px 20px;
+    }
 
+    /* Social ikonok egy sorba */
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-links a img {
+        width: 32px;
+        height: 32px;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .divider2 {
+    display: flex;
+    justify-content: space-between; /* legyen hely köztük */
+    align-items: stretch;        /* tetejükhöz igazítva */
+    gap: 20px;                      /* hézag köztük */
+  }
+
+  .divider2 section {
+    flex: 1; /* egyforma szélesség */
+    margin: 0;
+  }
+  
+  .divider2 .contact {
+    order: 1; /* hosszabb szakasz balra */
+  }
+
+  /* Fordított sorrend flexboxban */
+  .divider2 .subscribe {
+    order: 2; /* rövid szakasz jobbra */ 
+  }
+
+  
+}
+
+/* ---------- Footer szekció ---------- */
 
 .footer-wrapper footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;/* egymás alá */
     align-items: center;
-    padding: 16px 32px;
-
-    flex-wrap: wrap;
+    gap: 10px;/* távolság az elemek között */
+    padding: 15px;/* kényelmes belső tér mobilon */
 }
 
-.footer-left p,
-.footer-right p {
-    margin: 0;
+.footer-wrapper .footer-left p {
+    font-size: 1rem;/* kb. 16px */
+    margin: 0;/* eltünteti a felesleges margót */
+    text-align: center;/* mobilon középre */
 }
-*/
 
-
-
-/* Reszponzív beállítások 
-@media (max-width: 768px) {
-    .header-wrapper {
-        padding: 20px 10px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .cta-btn {
-        padding: 10px 25px;
-    }
-
-    .features ul {
-        padding-left: 20px;
-    }
-
-    .image-wrapper {
-        padding: 10px;
-    }
-
-    .features h2 {
-        font-size: 1.5rem;
-    }
-
-    .features li {
-        font-size: 1rem;
-    }
-}
-*/
-
-/* CTA gomb hover és focus állapotok 
-.cta-btn {
-    display: inline-block;
-    padding: 12px 32px;
-    background: #2a3a5e;
-    color: #fff;
+.footer-wrapper .footer-right a {
+    font-size: 1.375rem;/* kb. 22px */
+    margin: 0;/* eltünteti a felesleges margót */
+    text-align: center; /* mobilon középre */
+    color: #3e5488;/* harmonizáljon a szöveggel */
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: color 0.2s;
 }
 
-.cta-btn:hover, .cta-btn:focus {
-    background: #1a2540;
-    transform: scale(1.05); /* Finom növelés a gomb kinézetének kiemelésére 
-}*/
 
-/* Form elemek hover 
-input[type="text"], input[type="email"], button {
-    transition: border 0.3s ease;
+.footer-wrapper .footer-right a:hover {
+    color: #1a2540;
+    transform: scale(1.15);
+    filter: brightness(0.7);
 }
 
-input[type="text"]:hover, input[type="email"]:hover, button:hover {
-    border: 2px solid #2a3a5e;
-}
-*/
-
-/* Szakaszok közötti távolság 
-header, .features, .signup-section {
-    margin-bottom: 40px;
-}
-
-/* Formok közötti távolság 
-input, button {
-    margin-bottom: 15px;
-}
-*/
-
-/*.features ul {
-    list-style-type: none;  Lista piktogramok eltüntetése 
-    padding: 0;
-}
-
-.features li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    line-height: 1.5; Könnyebben olvasható lista 
-}
-*/
-
-/* Finom animációk a szakaszokhoz 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+@media (min-width: 600px) and (max-width: 768px) {
+    .footer-wrapper footer {
+        flex-direction: column;/* egymás mellé kerülnek */
+        padding: 20px 30px;
+        gap: 14px;
     }
-    to {
-        opacity: 1;
+
+    .footer-wrapper .footer-left p {
+        font-size: 1.125rem;/* maradhat a mobilhoz hasonló */
+        text-align: left;/* bal oldali és jobb oldali igazítás */
+        margin: 0;
+    }
+
+
+    .footer-wrapper .footer-right a {
+        font-size: 1.375rem;/* kb. 22px */
+        text-align: right;
+        margin: 0;
     }
 }
 
-section {
-    animation: fadeIn 1s ease-out;
-}
+@media (min-width: 768px) and (max-width: 1024px) {
 
+    .footer-wrapper footer {
+        display: flex;
+        flex-direction: row;       /* egymás mellé */
+        justify-content: space-between;
+        align-items: stretch;      /* egyforma magasság */
+        gap: 20px;                 /* hézag a két doboz között */
+        padding: 0 20px;           /* oldalt legyen padding */
+        border: none;
+        box-shadow: none;          /* ne legyen árnyék */
+    }      
 
-h1, h2 {
-    font-weight: bold;
-    color: #2a3a5e;
-}
+    .footer-wrapper .footer-left,
+    .footer-wrapper .footer-right {
+        flex: 1;                   /* egyforma szélesség */
+        display: flex;
+        align-items: center;       /* függőlegesen középre */
+        justify-content: center;   /* vízszintesen középre */
+        text-align: center;
+    }
 
-p, li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a5a7e;
+    .footer-wrapper .footer-left {
+        position: relative; /* kell a pseudo-elemhez */
+    }
+
+    /* függőleges elválasztó a két szöveg között */
+    .footer-wrapper .footer-left::after {
+        content: "";
+        position: absolute;
+        right: -10px; /* távolság a vonalhoz */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 1.5em; /* a szöveg magasságához igazítva */
+        background-color: #1a2540; /* a címsor színe */
+    }
+
+    .footer-wrapper .footer-left p {
+        font-size: 1.25rem;/* kb. 20px */
+    }
 }
-*/

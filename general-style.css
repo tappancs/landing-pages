@@ -5,71 +5,105 @@
 body {
     display: flex;
     flex-direction: column;
+    gap: 40px;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     background-color: #ffffff;
 
 }
 
-section { 
-    width: 90%;
-    margin: 0 auto 40px auto; 
-    padding: 20px; 
-    background-color: #f9f9f9; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+section {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* --------- Címek minden szekcióban --------- */
 h1,
-h2,
-h3 {
+h2 {
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 1.875rem;
+    font-size: 1.5625rem;/* kb. 25px */
     font-weight: 700;
-    font-style: normal;
     color: #002147;
+    margin-bottom: 16px;/* tér a cím és a tartalom között */
+    text-align: center;/* középre igazítás */
 }
 
+/* --------- Törzsszöveg minden szekcióban --------- */
 p {
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* kb. 20px */
     font-weight: 400;
-    font-style: normal;
+    line-height: 1.6; /* javítja az olvashatóságot */
     color: #2a2a2a;
-    padding: 15px;
+    padding: 0; /* ne legyen felesleges padding */
+
 }
 
-/* Reszponzív beállítások 
-@media (max-width: 768px) {
-    .header-wrapper {
-        padding: 20px 10px;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- Tablet nézet - globalis betűméretek ---------- */
+@media (min-width: 600px) and (max-width:768px){
+
+    /* Címek h1, h2 */
+    h1, h2 {
+        font-size: 1.875rem; /* kb. 30px */
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .cta-btn {
-        padding: 10px 25px;
-    }
-
-   /* .features ul {
-        padding-left: 20px;
-    }
-        */
-
-   /* .image-wrapper {
-        padding: 10px;
-    }
-
-    /*.features h2 {
-        font-size: 1.5rem;
-    }
-
-    .features li {
-        font-size: 1rem;
+    /* Törzsszöveg p */
+    p {
+        font-size: 1.5rem; /* kb. 24px */
+        font-weight: 400;
     }
 }
-*/
+
+/*---------- Laptop nézet - globalis betűméretek ---------- */
+
+@media (min-width:768px) and (max-width:1024px){
+
+    /* Címek h1, h2 */
+    h1, h2 {
+        font-size: 2.25rem; /* kb. 36px */
+    }
+
+    /* Törzsszöveg p */
+    p {
+        font-size: 1.75rem; /* kb. 28px */
+        font-weight: 400;
+    }
+}
+
+/* ---------- Desktop nézet - globalis betűméretek ---------- */
+
+@media (min-width: 1025px) {
+    /* Címek h1, h2 */
+    h1, h2 {
+        font-size: 3.125rem; /* kb. 50px */
+    }
+
+    /* Törzsszöveg p */
+    p {
+        font-size: 1.875rem; /* kb. 30px */
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    /* Section padding nagyobb képernyőhöz */
+    section {
+        padding: 30px 40px;
+    }
+
+    /* Globális gap a body-ban */
+    body {
+        gap: 50px;
+    }
+}
+
+
+
+
